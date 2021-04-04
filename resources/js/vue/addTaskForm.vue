@@ -1,9 +1,8 @@
 <template>
     <div>
-        Hello
+        Form
     </div>
 </template>
-
 <script>
 export default {
     

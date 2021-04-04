@@ -1,9 +1,8 @@
 <template>
     <div>
-        Hello
+        Todo List
     </div>
 </template>
-
 <script>
 export default {
     
