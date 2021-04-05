@@ -20,20 +20,28 @@
 export default {
   props: ["item"],
   methods: {
-      triggerTask() {
-          axios.put('api/item/' + this.item.id, {
-              item: this.item
-          })
-          .then(response => {
-              if (response.status == 200) {
-                  this.$emit('taskchanged')
-              }
-          })
-          .console.log(error);
-      },
-      removeTask() {
-
-      }
-  }
+    triggerTask() {
+      axios
+        .put("api/item/" + this.item.id, {
+          item: this.item,
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            this.$emit("taskchanged");
+          }
+        })
+        .console.log(error);
+    },
+    removeTask() {
+      axios.delete("/api/item/" + this.item.id).then((response) => {
+        if (response.status == 200) {
+          this.$emit("taskchanged");
+        }
+      })
+      .catch(error => {
+          console.log(error);
+      })
+    },
+  },
 };
 </script>

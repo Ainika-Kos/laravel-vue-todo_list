@@ -8,15 +8,12 @@
       </div>
       <div class="row center-xs">
         <div class="col-xs-9">
-          <add-task-form/>
+          <add-task-form v-on:reloadlist="getTaskList" />
         </div>
       </div>
       <div class="row center-xs">
         <div class="col-xs-9">
-          <task-list-view
-          :items="items"
-          v-on:reloadlist="getTaskList"
-          />
+          <task-list-view :items="items" v-on:reloadlist="getTaskList" />
         </div>
       </div>
     </div>
@@ -51,7 +48,7 @@ export default {
     },
   },
   created() {
-      this.getTaskList();
-  }
+    this.getTaskList();
+  },
 };
 </script>
