@@ -1,4 +1,4 @@
-9<template>
+<template>
   <div class="todoListContainer">
     <div class="container">
       <div class="row center-xs">
@@ -7,12 +7,12 @@
         </div>
       </div>
       <div class="row center-xs">
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-md-9">
           <add-task-form v-on:reloadlist="getTaskList" />
         </div>
       </div>
       <div class="row center-xs">
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-md-9">
           <task-list-view :items="items" v-on:reloadlist="getTaskList" />
         </div>
       </div>

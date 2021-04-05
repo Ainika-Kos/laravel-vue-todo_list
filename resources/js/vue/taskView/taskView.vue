@@ -1,10 +1,10 @@
 <template>
   <div class="taskView">
     <div>
-      <input type="checkbox" @change="triggerTask" v-model="item.completed" />
-      <span :class="[item.completed ? 'completed' : '', 'taskText']">{{
+      <input type="checkbox" @change="triggerTask" v-model="item.completed" :id="item.name"/>
+      <label :class="[item.completed ? 'completed' : '', 'taskText']" :for="item.name">{{
         item.name
-      }}</span>
+      }}</label>
     </div>
     <div>
       <button>
