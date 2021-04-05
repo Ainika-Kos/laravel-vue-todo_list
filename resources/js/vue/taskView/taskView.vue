@@ -1,10 +1,19 @@
 <template>
   <div class="taskView">
-    <div>
-      <input type="checkbox" @change="triggerTask" v-model="item.completed" :id="item.name"/>
-      <label :class="[item.completed ? 'completed' : '', 'taskText']" :for="item.name">{{
-        item.name
-      }}</label>
+    <div class="taskView_input">
+      <input
+        type="checkbox"
+        @change="triggerTask"
+        v-model="item.completed"
+        :id="item.name"
+      />
+      <span class="checkmark"></span>
+      <label
+        :class="[item.completed ? 'completed' : '', 'taskText']"
+        :for="item.name"
+      >
+        {{ item.name }}
+      </label>
     </div>
     <div>
       <button>
@@ -33,14 +42,16 @@ export default {
         .console.log(error);
     },
     removeTask() {
-      axios.delete("/api/item/" + this.item.id).then((response) => {
-        if (response.status == 200) {
-          this.$emit("taskchanged");
-        }
-      })
-      .catch(error => {
+      axios
+        .delete("/api/item/" + this.item.id)
+        .then((response) => {
+          if (response.status == 200) {
+            this.$emit("taskchanged");
+          }
+        })
+        .catch((error) => {
           console.log(error);
-      })
+        });
     },
   },
 };
