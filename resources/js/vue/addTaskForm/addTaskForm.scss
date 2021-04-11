@@ -51,3 +51,14 @@ button {
         outline: none;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    input {
+        width: 70%;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+    }
+  }
